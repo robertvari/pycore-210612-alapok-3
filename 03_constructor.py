@@ -7,10 +7,28 @@ class Cup:
         self.empty = empty
 
 
-black_cup = Cup("Black", True)
-red_cup = Cup("Red", False)
-blue_cup = Cup("Blue", False)
+class Employee:
+    # constructor
+    def __init__(self, name, email, phone, address):
+        self.name = name
+        self.email = email
+        self.phone = phone
+        self.address = address
 
-print(black_cup.color)
-print(red_cup.color)
-print(blue_cup.color)
+
+john = Employee(
+    "John",
+    "john@gmail.com",
+    "0620 123 4567",
+    "Budapest"
+)
+
+tom = Employee(
+    "Tom",
+    "tom@gmail.com",
+    "0620 997 3344",
+    "Debrecen"
+)
+
+print(john.name, john.email, john.phone, john.address)
+print(tom.name, tom.email, tom.phone, tom.address)
