@@ -9,6 +9,19 @@ class HumanBase:
         return self.name
 
 
+class FatherBase(HumanBase):
+    pass
+
+
+class MotherBase(HumanBase):
+    pass
+
+
+# multiple inheritance
+class Child(FatherBase, MotherBase):
+    pass
+
+
 class CommonPeople(HumanBase):
     pass
 
@@ -18,8 +31,10 @@ class Student(HumanBase):
         print("I'm studying at BMI")
 
 
+# grandchild
 class Employee(Student):
     pass
+
 
 
 Tom = Employee("Tom")
