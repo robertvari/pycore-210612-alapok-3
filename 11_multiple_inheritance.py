@@ -10,15 +10,18 @@ class HumanBase:
 
 
 class FatherBase(HumanBase):
-    pass
+    def say_hello(self):
+        print("Luke. I'm you father.")
 
 
 class MotherBase(HumanBase):
-    pass
+    def say_hello(self):
+        print("I'm your mother")
 
 
 # multiple inheritance
-class Child(FatherBase, MotherBase):
+class Child(MotherBase, FatherBase):
+    # testing Method Resolution Order
     pass
 
 
@@ -36,13 +39,5 @@ class Employee(Student):
     pass
 
 
-
-Tom = Employee("Tom")
-Chris = Student("Chris")
-John = CommonPeople("John")
-
-
-Tom.say_hello()
-Tom.my_school()
-
-John.say_hello()
+Luke = Child("Luke Skywalker")
+Luke.say_hello()
