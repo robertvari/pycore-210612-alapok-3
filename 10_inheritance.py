@@ -4,6 +4,9 @@ class VehicleBase:
         self.color = color
         self.model = model
 
+    def use(self):
+        print(f"{self.model} starts...")
+
     def __str__(self):
         return f"Model: {self.model} Speed: {self.speed}, Color: {self.color}"
 
@@ -13,7 +16,9 @@ class Car(VehicleBase):
 
 
 class Bike(VehicleBase):
-    pass
+    # override
+    def use(self):
+        print(f"{self.model} ring!!!")
 
 
 class Boat(VehicleBase):
@@ -26,6 +31,10 @@ class Train(VehicleBase):
 
 my_car = Car("Peugeot", 150)
 my_bike = Bike("Csepel", 40)
+my_boat = Boat("Titanic", 120)
 
-print(my_car)
-print(my_bike)
+
+# polymorphism
+my_car.use()
+my_bike.use()
+my_boat.use()
