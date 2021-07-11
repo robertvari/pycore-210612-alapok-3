@@ -15,7 +15,38 @@ class AiPlayer(PlayerBase):
 
 
 class Deck:
-    pass
+    def __init__(self):
+        self._cards = []
+
+    def create(self):
+        self._cards.clear()
+
+        cards = [
+            ["2", 2],
+            ["3", 3],
+            ["4", 4],
+            ["5", 5],
+            ["6", 6],
+            ["7", 7],
+            ["8", 8],
+            ["9", 9],
+            ["10", 10],
+            ["King", 10],
+            ["Queen", 10],
+            ["Jack", 10],
+            ["Ace", 11]
+        ]
+
+        names = ["Heart", "Club", "Diamond", "Spade"]
+
+        for name in names:
+            for card in cards:
+                card_name = f"{name} {card[0]}"
+                value = card[1]
+                new_card = Card(card_name, value)
+                print(new_card)
+
+
 
 
 class Card:
@@ -28,8 +59,5 @@ class Card:
 
 
 if __name__ == '__main__':
-    card1 = Card("Heart 2", 2)
-    card2 = Card("Heart 3", 3)
-    card3 = Card("Heart 4", 4)
-    hand = [card1, card2, card1]
-    print(hand)
+    deck = Deck()
+    deck.create()
