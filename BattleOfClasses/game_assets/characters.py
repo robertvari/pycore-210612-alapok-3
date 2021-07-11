@@ -46,7 +46,7 @@ class CharacterBase:
         print(f"Name: {self._name}")
         print(f"Race: {self._race}")
         print(f"Strength: {self._strength}")
-        print(f"Current HP: {self._strength}")
+        print(f"Current HP: {self._current_HP}")
 
     def __repr__(self):
         return self._name
@@ -65,6 +65,8 @@ class NPC(CharacterBase):
 
 
 if __name__ == '__main__':
-    for _ in range(10):
-        enemy = Enemy().create()
-        enemy.report()
+    enemy = Enemy().create()
+    enemy.report()
+
+    npc = NPC().create()
+    npc.report()
