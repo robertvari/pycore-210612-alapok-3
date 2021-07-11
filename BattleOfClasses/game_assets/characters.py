@@ -42,7 +42,10 @@ class CharacterBase:
 
 
 class Player(CharacterBase):
-    pass
+    def create(self):
+        super(Player, self).create()
+        self._name = "Robert"
+        return self
 
 
 class Enemy(CharacterBase):
