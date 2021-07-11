@@ -34,13 +34,14 @@ class PlayerBase:
     def show_hand(self):
         print(self._hand)
 
-    def __str__(self):
+    def __repr__(self):
         return self._name
 
 
 class HumanPlayer(PlayerBase):
     def create(self):
-        self._name = input("What is your name?")
+        # todo replace this with an input()
+        self._name = "Robert Vari"
         self._credits = random.randint(100, 1000)
 
     def draw_card(self, deck):
