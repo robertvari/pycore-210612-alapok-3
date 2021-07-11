@@ -53,6 +53,9 @@ class Deck:
 
         random.shuffle(self._cards)
 
+    def give_card(self):
+        pass
+
     def show(self):
         print(self._cards)
 
