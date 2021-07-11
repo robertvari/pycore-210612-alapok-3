@@ -43,8 +43,10 @@ class Deck:
             for card in cards:
                 card_name = f"{name} {card[0]}"
                 value = card[1]
+
                 new_card = Card(card_name, value)
-                print(new_card)
+
+                self._cards.append(new_card)
 
 
 
