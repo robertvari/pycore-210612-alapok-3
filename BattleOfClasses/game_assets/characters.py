@@ -35,7 +35,18 @@ class CharacterBase:
 
         self._name = f"{random.choice(FIRST)}{random.choice(SECOND)}"
 
+        self._race = random.choice(list(self.races))
+        self._strength = self.races[self._race]["strength"]
+        self._max_HP = self.races[self._race]["max_HP"]
+        self._current_HP = self._max_HP
+
         return self
+
+    def report(self):
+        print(f"Name: {self._name}")
+        print(f"Race: {self._race}")
+        print(f"Strength: {self._strength}")
+        print(f"Current HP: {self._strength}")
 
     def __repr__(self):
         return self._name
@@ -54,6 +65,6 @@ class NPC(CharacterBase):
 
 
 if __name__ == '__main__':
-    for _ in range(100):
+    for _ in range(10):
         enemy = Enemy().create()
-        print(enemy)
+        enemy.report()
