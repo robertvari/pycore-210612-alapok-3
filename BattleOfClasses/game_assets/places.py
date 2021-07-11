@@ -1,4 +1,4 @@
-import random
+import random, time
 
 from game_assets import characters
 
@@ -47,11 +47,15 @@ class Arena(PlaceBase):
                 print(f"{self._player} is dead...")
                 break
 
+            time.sleep(2)
+
             self._player.attack(current_enemy)
 
             if not current_enemy.is_alive():
                 print(f"{current_enemy} is dead...")
                 break
+
+            time.sleep(2)
 
 
 class Village(PlaceBase):

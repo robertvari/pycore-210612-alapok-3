@@ -14,6 +14,8 @@ class CharacterBase:
         self._name = None
         self._race = None
         self._inventory = []
+        self.left_hand = None
+        self._right_hand = None
         self._golds = random.randint(0, 100)
 
         # combat attributes
