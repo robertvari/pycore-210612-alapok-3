@@ -2,7 +2,7 @@ class ItemBase:
     pass
 
 
-class CommonItem(ItemBase):
+class Common(ItemBase):
     pass
 
 
