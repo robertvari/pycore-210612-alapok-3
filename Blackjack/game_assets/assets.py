@@ -64,7 +64,7 @@ class HumanPlayer(PlayerBase):
                 self._hand.append(new_card)
             else:
                 print("You passed.")
-                self.in_game = False
+                self._in_game = False
 
 
 class AiPlayer(PlayerBase):
