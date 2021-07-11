@@ -1,5 +1,10 @@
 class CharacterBase:
-    pass
+    races = {
+        "human": {"strength": 50, "max_HP": 100},
+        "ork": {"strength": 130, "max_HP": 200},
+        "elf": {"strength": 60, "max_HP": 100},
+        "dwarf": {"strength": 120, "max_HP": 230},
+    }
 
 
 class Player(CharacterBase):
@@ -15,5 +20,4 @@ class NPC(CharacterBase):
 
 
 if __name__ == '__main__':
-    player = Player()
-    player.create()
+    print(CharacterBase.races["name"])
