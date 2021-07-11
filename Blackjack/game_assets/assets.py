@@ -15,8 +15,21 @@ class PlayerBase:
         self._name = random.choice(self.name_list)
 
     def draw_card(self, deck):
-        new_card = deck.give_card()
-        self._hand.append(new_card)
+        # check hand value
+            # if hand value < 16 draw new card
+            # elif hand value >= 21 pass
+
+        while self._in_game:
+            hand_value = self.count_hand()
+            if hand_value > 16:
+                self._in_game = False
+                print(f"{self._name} passes...")
+            else:
+                new_card = deck.give_card()
+                self._hand.append(new_card)
+
+    def count_hand(self):
+        return sum([card.value for card in self._hand])
 
     def show_hand(self):
         print(self._hand)
@@ -99,7 +112,6 @@ if __name__ == '__main__':
     player1 = AiPlayer()
     player1.create()
 
-    for _ in range(10):
-        player1.draw_card(deck)
+    player1.draw_card(deck)
 
-    print(player1._hand)
+    player1.show_hand()
