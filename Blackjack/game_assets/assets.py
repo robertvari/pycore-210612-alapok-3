@@ -14,6 +14,9 @@ class PlayerBase:
         self._credits -= value
         return value
 
+    def set_credits(self, value):
+        self._credits += value
+
     def create(self):
         self._credits = random.randint(100, 1000)
         self._name = random.choice(self.name_list)

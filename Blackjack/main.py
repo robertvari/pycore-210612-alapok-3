@@ -38,7 +38,19 @@ class Blackjack:
             self._bet += player.give_bet(10)
             player.draw_card(self._deck)
 
-        print(self._bet)
+        self._get_winner()
+
+    def _get_winner(self):
+        player_list = [p for p in self._players if p.count_hand() <= 21]
+
+        if player_list:
+            winner_list = sorted(player_list, key=lambda p: p.count_hand())
+
+            winner = winner_list[-1]
+            print(f"The winner: {winner} who wins {self._bet} credits.")
+            winner.set_credits(self._bet)
+        else:
+            print("Nobody wins this time. :(")
 
 
 if __name__ == '__main__':
