@@ -16,7 +16,10 @@ class PlayerBase:
 
     def draw_card(self, deck):
         new_card = deck.give_card()
-        print(f"{self._name} gets a new card: {new_card}")
+        self._hand.append(new_card)
+
+    def show_hand(self):
+        print(self._hand)
 
     def __str__(self):
         return self._name
@@ -67,7 +70,14 @@ class Deck:
         random.shuffle(self._cards)
 
     def give_card(self):
-        pass
+        new_card = self._cards[-1]
+        self._cards.remove(new_card)
+
+        return new_card
+
+    @property
+    def cards(self):
+        return self._cards
 
     def show(self):
         print(self._cards)
@@ -88,4 +98,8 @@ if __name__ == '__main__':
 
     player1 = AiPlayer()
     player1.create()
-    player1.draw_card(deck)
+
+    for _ in range(10):
+        player1.draw_card(deck)
+
+    print(player1._hand)
