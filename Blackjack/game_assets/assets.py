@@ -3,10 +3,13 @@ import random
 
 class PlayerBase:
     def __init__(self):
-        self.name = None
-        self.credits = 0
-        self.hand = []
-        self.in_game = True
+        self._name = None
+        self._credits = 0
+        self._hand = []
+        self._in_game = True
+
+    def create(self):
+        self._credits = random.randint(100, 1000)
 
 
 class HumanPlayer(PlayerBase):
@@ -72,4 +75,6 @@ class Card:
 if __name__ == '__main__':
     deck = Deck()
     deck.create()
-    deck.show()
+
+    player = AiPlayer()
+    player.create()
