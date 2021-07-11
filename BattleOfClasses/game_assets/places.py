@@ -44,6 +44,13 @@ class Arena(PlaceBase):
             current_enemy.attack(self._player)
 
             if not self._player.is_alive():
+                print(f"{self._player} is dead...")
+                break
+
+            self._player.attack(current_enemy)
+
+            if not current_enemy.is_alive():
+                print(f"{current_enemy} is dead...")
                 break
 
 

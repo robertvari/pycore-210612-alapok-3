@@ -37,8 +37,18 @@ class CharacterBase:
         print(f"Strength: {self._strength}")
         print(f"Current HP: {self._current_HP}")
 
+    def set_current_HP(self, value):
+        self._current_HP -= value
+
     def attack(self, other):
-        pass
+        print(f"{self._name} attacks {other}")
+        attack_strength = random.randint(0, self._strength)
+
+        if attack_strength == 0:
+            print(f"{self._name} misses...")
+        else:
+            print(f"{self._name} hits {other} with {attack_strength}")
+            other.set_current_HP(attack_strength)
 
     def is_alive(self):
         return self._current_HP > 0
