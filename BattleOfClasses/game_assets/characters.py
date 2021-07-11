@@ -35,7 +35,6 @@ class CharacterBase:
 
         self._name = f"{random.choice(FIRST)}{random.choice(SECOND)}"
 
-
         return self
 
     def __repr__(self):
