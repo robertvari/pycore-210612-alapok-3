@@ -7,6 +7,8 @@ class Blackjack:
         self._deck = Deck()
         self._deck.create()
 
+        self._bet = 0
+
         self._players = []
 
         # create AI players
@@ -29,8 +31,14 @@ class Blackjack:
         print("="*50, "BLACKJACK", "="*50)
 
     def _start(self):
+        # players draw cards
         for player in self._players:
+            print(f"{player} draws cards.")
+
+            self._bet += player.give_bet(10)
             player.draw_card(self._deck)
+
+        print(self._bet)
 
 
 if __name__ == '__main__':

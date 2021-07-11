@@ -10,6 +10,10 @@ class PlayerBase:
         self._hand = []
         self._in_game = True
 
+    def give_bet(self, value):
+        self._credits -= value
+        return value
+
     def create(self):
         self._credits = random.randint(100, 1000)
         self._name = random.choice(self.name_list)
