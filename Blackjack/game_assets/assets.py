@@ -2,6 +2,8 @@ import random
 
 
 class PlayerBase:
+    name_list = ["Brittney Moriah", "Curtis Tristin", "Lucas Troy", "Chip Gale", "Simon Lynn"]
+
     def __init__(self):
         self._name = None
         self._credits = 0
@@ -10,6 +12,10 @@ class PlayerBase:
 
     def create(self):
         self._credits = random.randint(100, 1000)
+        self._name = random.choice(self.name_list)
+
+    def __str__(self):
+        return self._name
 
 
 class HumanPlayer(PlayerBase):
@@ -76,5 +82,19 @@ if __name__ == '__main__':
     deck = Deck()
     deck.create()
 
-    player = AiPlayer()
-    player.create()
+    player1 = AiPlayer()
+    player1.create()
+
+    player2 = AiPlayer()
+    player2.create()
+
+    player3 = AiPlayer()
+    player3.create()
+
+    player4 = AiPlayer()
+    player4.create()
+
+    print(player1)
+    print(player2)
+    print(player3)
+    print(player4)
