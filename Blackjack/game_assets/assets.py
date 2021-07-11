@@ -14,6 +14,10 @@ class PlayerBase:
         self._credits = random.randint(100, 1000)
         self._name = random.choice(self.name_list)
 
+    def draw_card(self, deck):
+        new_card = deck.give_card()
+        print(f"{self._name} gets a new card: {new_card}")
+
     def __str__(self):
         return self._name
 
@@ -84,17 +88,4 @@ if __name__ == '__main__':
 
     player1 = AiPlayer()
     player1.create()
-
-    player2 = AiPlayer()
-    player2.create()
-
-    player3 = AiPlayer()
-    player3.create()
-
-    player4 = AiPlayer()
-    player4.create()
-
-    print(player1)
-    print(player2)
-    print(player3)
-    print(player4)
+    player1.draw_card(deck)
