@@ -38,7 +38,13 @@ class Arena(PlaceBase):
         current_enemy = random.choice(self._enemies)
 
         print(f"{self._player} enters the Arena!")
-        print(f"{current_enemy} attacks {player}")
+
+        while True:
+            # enemy attacks first
+            current_enemy.attack(self._player)
+
+            if not self._player.is_alive():
+                break
 
 
 class Village(PlaceBase):

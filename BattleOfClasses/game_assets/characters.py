@@ -37,6 +37,12 @@ class CharacterBase:
         print(f"Strength: {self._strength}")
         print(f"Current HP: {self._current_HP}")
 
+    def attack(self, other):
+        pass
+
+    def is_alive(self):
+        return self._current_HP > 0
+
     def __repr__(self):
         return self._name
 
