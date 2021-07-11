@@ -1,3 +1,5 @@
+import random
+
 from game_assets import characters
 
 
@@ -31,14 +33,23 @@ class Arena(PlaceBase):
 
         return self
 
+    def enter(self, player):
+        self._player = player
+        current_enemy = random.choice(self._enemies)
+
+        print(f"{self._player} enters the Arena!")
+        print(f"{current_enemy} attacks {player}")
+
 
 class Village(PlaceBase):
-    pass
+    def enter(self, player):
+        self._player = player
+        print(f"Welcome {player} in out friendly village.")
 
 
 if __name__ == '__main__':
     arena = Arena().create()
-    player = characters.Player().create()
-    player.report()
+    village = Village().create()
 
+    player = characters.Player().create()
     arena.enter(player)
