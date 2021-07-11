@@ -48,7 +48,8 @@ class Deck:
 
                 self._cards.append(new_card)
 
-
+    def show(self):
+        print(self._cards)
 
 
 class Card:
@@ -63,3 +64,4 @@ class Card:
 if __name__ == '__main__':
     deck = Deck()
     deck.create()
+    deck.show()
