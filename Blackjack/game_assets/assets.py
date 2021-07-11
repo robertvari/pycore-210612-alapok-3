@@ -46,16 +46,15 @@ class HumanPlayer(PlayerBase):
     def draw_card(self, deck):
         print("This is your turn.")
 
-        while self.in_game:
+        while self._in_game:
             hand_value = self.count_hand()
             print(f"Your hand value: {hand_value}")
             print(f"Your cards: {self._hand}")
 
             if hand_value > 21:
-                self.in_game = False
+                self._in_game = False
                 print(f"Your hand value is to much: {hand_value}")
                 break
-
 
             result = input("Do you want to draw a new card? (y/n)")
             if result == "y":
