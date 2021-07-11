@@ -1,3 +1,6 @@
+import random
+
+
 class PlayerBase:
     def __init__(self):
         self.name = None
@@ -48,6 +51,8 @@ class Deck:
 
                 self._cards.append(new_card)
 
+        random.shuffle(self._cards)
+
     def show(self):
         print(self._cards)
 
@@ -58,7 +63,7 @@ class Card:
         self.value = value
 
     def __repr__(self):
-        return f"Name: {self.name} Value: {self.value}"
+        return f"{self.name}"
 
 
 if __name__ == '__main__':
